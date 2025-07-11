@@ -47,3 +47,22 @@ npm i react-router-dom
 ```
 npm i @tanstack/react-query
 ```
+
+- Adds shadcn components
+
+```
+npx shadcn@latest add card badge button form input textarea
+```
+
+- Installs dayjs to handle date formatting
+
+```
+npm i dayjs
+```
+
+- Installs zod for data validation
+
+```
+npm i zod
+npm i @hookform/resolvers
+```
