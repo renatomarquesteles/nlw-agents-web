@@ -2,6 +2,6 @@ export type CreateQuestionResponse = {
   id: string;
   roomId: string;
   question: string;
-  answer: null;
+  answer: string | null;
   createdAt: string;
 };
