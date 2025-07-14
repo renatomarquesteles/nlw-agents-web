@@ -6,6 +6,16 @@ Frontend application for NLW Agents developed during Rocketseat's NLW (Next Leve
 
 This is the frontend repository for the NLW Agents application. The backend is available at: [nlw-agents-server](https://github.com/renatomarquesteles/nlw-agents-server)
 
+The application allows creating meeting rooms, recording audio, and all the questions about the meetings are answered by AI based on the recorded content.
+
+## ✨ Features
+
+- **Room Creation**: Interface for creating new meeting rooms
+- **Question Management**: System for adding and viewing questions
+- **Audio Recording**: Functionality for recording meeting audio
+- **Responsive Interface**: Adaptive design for different devices
+- **Form Validation**: Robust validation using Zod and React Hook Form
+
 ## 🛠️ Technologies Used
 
 ### Core
@@ -26,10 +36,22 @@ This is the frontend repository for the NLW Agents application. The backend is a
 - **Class Variance Authority** - Component variant system
 - **clsx & tailwind-merge** - Utilities for conditional classes
 
+### Forms & Validation
+
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
+
+### UI Components
+
+- **shadcn** - Component Library
+- **Radix UI** - Accessible components (Label, Slot)
+- **dayjs** - Date manipulation
+
 ### Development
 
 - **Biome** - Linter and formatter
 - **Ultracite** - Development tools
+- **TypeScript** - Static typing
 
 ## 🚀 Project Setup
 
@@ -61,14 +83,33 @@ npm run dev
 
 4. Access `http://localhost:5173` in your browser
 
+### Available Scripts
+
+- `npm run dev` - Starts development server
+- `npm run build` - Generates production build
+- `npm run preview` - Previews production build locally
+
 ## 📁 Project Structure
 
 ```
 src/
-├── pages/          # Page components
 ├── components/     # Reusable components
-├── app.tsx         # Main app configuration
-└── main.tsx        # Entry point
+│   ├── ui/        # Base UI components
+│   ├── question-item.tsx
+│   ├── question-form.tsx
+│   ├── question-list.tsx
+│   ├── create-room-form.tsx
+│   └── room-list.tsx
+├── pages/         # Page components
+│   ├── create-room.tsx
+│   ├── room.tsx
+│   ├── record-room-audio.tsx
+│   └── not-found.tsx
+├── http/          # HTTP configurations and APIs
+├── lib/           # Utilities and configurations
+├── app.tsx        # Main application configuration
+├── main.tsx       # Entry point
+└── index.css      # Global styles
 ```
 
 ## 🌐 Backend
@@ -76,3 +117,10 @@ src/
 The application backend is available at: [nlw-agents-server](https://github.com/renatomarquesteles/nlw-agents-server)
 
 Make sure the backend server is running on `http://localhost:3333` for the frontend to work properly.
+
+## 🎯 Application Routes
+
+- `/` - Home page for creating a new room
+- `/room/:roomId` - Specific room with questions
+- `/room/:roomId/audio` - Room audio recording
+- `*` - 404 page for not found routes
